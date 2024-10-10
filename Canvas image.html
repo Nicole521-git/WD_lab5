@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smile Face</title>
+</head>
+
+<body>
+    <canvas id="smile" width="400" height="400" style="border:1px solid black;"></canvas>
+    
+    <script>
+
+        var canvas = document.getElementById('smile');
+        var ctx = canvas.getContext('2d');
+
+        // Add background color to the canvas
+        ctx.fillStyle = 'lightgreen'; 
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // face
+        ctx.beginPath();
+        ctx.arc(200, 200, 150, 0, Math.PI * 2, true); 
+        ctx.fillStyle = 'yellow';
+        ctx.fill();
+
+        // left eye
+        ctx.beginPath();
+        ctx.arc(140, 170, 20, 0, Math.PI * 2, true); 
+        ctx.fillStyle = 'black';
+        ctx.fill();
+
+        // right eye
+        ctx.beginPath();
+        ctx.arc(260, 170, 20, 0, Math.PI * 2, true); 
+        ctx.fillStyle = 'black';
+        ctx.fill();
+
+        //nose
+        ctx.beginPath();
+        ctx.lineWidth = 6;
+        ctx.moveTo(200, 230);
+        ctx.lineTo(200, 200);
+
+        ctx.stroke();
+
+         // mouth
+        ctx.beginPath();
+        ctx.lineWidth = 8;
+        ctx.arc(200, 222, 70, Math.PI/180*30, Math.PI / 180*150, false); 
+        ctx.stroke();
+
+        //Text
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = 'darkgreen'; 
+        ctx.font = 'bold 25px Arial'; 
+        ctx.fillText('The Cavans brought me to life!', 200, 380);
+    </script>
+
+</body>
+
+</html>
